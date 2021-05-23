@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+   h1 {
+    margin-bottom: 30px;
+   }
+</style>
+
+<h1>{% block title %} University employees: {% endblock %}<button type="button"  class="btn btn-success float-right"
+        data-toggle="modal" data-target="#mymodal">New employee</button></h1>
+    {% for emp in employees %}
+        <a href="{{ url_for('employee.emp', emp_id=emp.id_emp) }}">
+            <h2>{{ emp.last_name }} {{ emp.first_name }}</h2>
+        </a>
+		<hr>
+    {% endfor %}
+
+
+
+<!-- Create Employee-->
+<div id="mymodal" class="modal fade" role="dialog">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title">Create employee</h4>
+         </div>
+         <div class="modal-body">
+
+            <form action="{{url_for('employee.emp_create')}}" method="POST">
+               <div class="form-group">
+                  <label>First name:</label>
+                  <input type="text" class="form-control" name="first_name" required>
+               </div>
+
+                <div class="form-group">
+                  <label>Last name:</label>
+                  <input type="text" class="form-control" name="last_name" required>
+               </div>
+
+                <div class="form-group">
+                  <label>Date of birth:</label>
+                  <input type="date" class="form-control" name="birth_date" required>
+               </div>
+
+                <div class="form-group">
+                  <label>Salary:</label>
+                  <input type="number" class="form-control" name="salary" required>
+               </div>
+
+                <div class="form-group">
+                  <label>Department id:</label>
+                  <input type="number" class="form-control" name="department_id" required>
+               </div>
+
+	<div class="form-group">
+                  <label>E-mail:</label>
+                  <input type="email" class="form-control" name="email" required>
+               </div>
+
+               <div class="form-group">
+                  <button class="btn btn-primary" type="submit">Add</button>
+               </div>
+            </form>
+         </div>
+
+
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         </div>
+      </div>
+   </div>
+</div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
