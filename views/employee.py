@@ -18,7 +18,7 @@ def emp(emp_id):
     response = requests.get(service_url+'/'+str(emp_id))
     emp_data = response.json()
     if emp_data['status']=='failed': 
-        abort(404)
+        return render_template('employee.html', {"message": "no matching employee"}) #abort(404)
 
     return render_template('employee.html', employee_data=emp_data['data'])
 
@@ -41,7 +41,32 @@ def emp_create():
 
     return redirect(url_for('employee.emp_index'))
 
-#-------------------------------------------------------
+
+@employee.route('/employee/search', methods=['GET','POST'])
+def search_by_date():
+    if request.method == 'POST':
+        b_date = request.form['search_date']
+
+        response = requests.get(service_url+'/search/'+str(b_date))
+        emp_data = response.json()
+        if emp_data['status']=='failed': 
+            abort(404)
+
+    return render_template('search_result.html', employees_data=emp_data['data'])
+
+
+@employee.route('/employee/search_between', methods=['GET','POST'])
+def search_between_dates():
+    if request.method == 'POST':
+        start_b_date = request.form['start_search_date']
+        end_b_date = request.form['end_search_date']
+
+        response = requests.get(service_url+'/search_between/'+str(start_b_date)+','+str(end_b_date))
+        emp_data = response.json()
+        if emp_data['status']=='failed': 
+            abort(404)
+
+    return render_template('search_result.html', employees_data=emp_data['data'])
 
 
 @employee.route('/employee/update/<int:emp_id>', methods=['GET', 'POST'])

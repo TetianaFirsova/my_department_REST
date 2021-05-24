@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>{% block title %} Search results: {% endblock %}</h1>
+    {% for emp in employees_data %}
+        <p>Employee <strong><a href="{{ url_for('employee.emp', emp_id=emp.id_emp) }}">{{ emp['last_name']}} {{ emp['first_name']}}</a></strong> was born on <strong>{{ emp['birth_date']}}</strong></p>
+		<hr>
+    {% endfor %}
+
+<div class="list-unstyled list-inline"><a href="{{ url_for('employee.emp_index') }}">
+            <h3><i><u>Back to employees</u></i></h3></a></button>
+{% endblock %}

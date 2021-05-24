@@ -3,7 +3,7 @@ h1 {
 }
 
 .container {
+  width: 1010px;
   margin: auto;
-  width: 350px;
   text-align: center;
 }

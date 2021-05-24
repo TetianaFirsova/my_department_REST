@@ -5,8 +5,22 @@
    h1 {
     margin-bottom: 30px;
    }
+#col1{
+     width: 800px;
+     padding: 0 7px; 
+     float: left; 
+    } 
+#col2{
+     width: 200px; 
+     padding: 0 7px;
+     float: left; 
+    } 
+    #col1, #col2 {
+     border-right: 1px solid #000;
+    }
 </style>
 
+<div id="col1">
 <h1>{% block title %} University employees: {% endblock %}<button type="button"  class="btn btn-success float-right"
         data-toggle="modal" data-target="#mymodal">New employee</button></h1>
     {% for emp in employees %}
@@ -15,8 +29,43 @@
         </a>
 		<hr>
     {% endfor %}
+ </div>
+<! -- ------------------------------------------------ -->
+ <div id="col2">
+ <h4>SEARCH:</h4>
+ <form action="{{url_for('employee.search_by_date')}}" method="POST">
+    <div class="form-group">
+        <label for="search_date">Type employee birth date: </label>
+        <input type="text" name="search_date" placeholder="yyyy-mm-dd" class="form-control">
+        </input>
+    </div>
 
+    
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+		<hr><hr><hr><hr><hr><hr><hr>
+<h4>SEARCH period:</h4>
+ <form action="{{url_for('employee.search_between_dates')}}" method="POST">
+    <div class="form-group">
+        <label for="start_search_date">Type start date: </label>
+        <input type="text" name="start_search_date" placeholder="yyyy-mm-dd" class="form-control">
+        </input>
+    </div>
+    <div class="form-group">
+        <label for="end_search_date">Type end date: </label>
+        <input type="text" name="end_search_date" placeholder="yyyy-mm-dd" class="form-control">
+        </input>
+    </div>
 
+    
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+ </div>
+<! -- ------------------------------------------------ -->
 
 <!-- Create Employee-->
 <div id="mymodal" class="modal fade" role="dialog">
