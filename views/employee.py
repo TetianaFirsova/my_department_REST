@@ -71,9 +71,30 @@ def search_between_dates():
 
 @employee.route('/employee/update/<int:emp_id>', methods=['GET', 'POST'])
 def emp_update(emp_id):
-    pass
+    if request.method == 'POST':
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
+        birth_date = request.form['birth_date']
+        salary = request.form['salary']
+        department_id = request.form['department_id']
+        email = request.form['email']
+
+        headers = {'Content-type': 'application/json'}
+        response = requests.put(service_url, json={"id_emp": emp_id, "first_name": first_name, "last_name": last_name, "birth_date": birth_date, "salary": salary, "department_id": department_id, "email": email}, headers=headers)
+
+        if response.status_code in range(200,299):
+            flash("Employee was successfully updated")
+
+    return redirect(url_for('employee.emp', emp_id=emp_id))
 
 
-@employee.route('/employee/<int:id_emp>/delete', methods=['GET', 'POST'])
-def emp_delete(id_emp):
-    pass
+@employee.route('/employee/<int:emp_id>/delete', methods=['GET', 'POST'])
+def emp_delete(emp_id):
+    if request.method == 'POST':
+        headers = {'Content-type': 'application/json'}
+        response = requests.delete(service_url, json={"id_emp": emp_id}, headers=headers)
+
+        if response.status_code in range(200,299):
+            flash("Employee was successfully deleted")
+
+    return redirect(url_for('employee.emp_index'))

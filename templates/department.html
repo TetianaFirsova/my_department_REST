@@ -37,7 +37,7 @@
 
 
 
-<form action="{{ url_for('department.dep_delete', id_dep=departments[0].id_dep) }}" method="POST">
+<form action="{{ url_for('department.dep_delete', dep_id=departments[0].id_dep) }}" method="POST">
     <input type="submit" value="Delete"
             class="btn btn-info float-right"
             onclick="return confirm('Are you sure you want to delete this department?')">
@@ -63,13 +63,13 @@
             <form action="{{url_for('department.dep_update', dep_id=departments[0].id_dep)}}" method="POST">
                <div class="form-group">
                   <label>Department name:</label>
-                   <input type="hidden"  name="id_dep" value="{{request.form['id_dep'] or departments.id_dep}}">
-                  <input type="text" class="form-control" name="dep_name" value="{{request.form['dep_name'] or departments.dep_name}}">
+                   <input type="hidden"  name="id_dep" value="{{request.form['id_dep'] or departments[0].id_dep}}">
+                  <input type="text" class="form-control" name="dep_name" value="{{request.form['dep_name'] or departments[0].dep_name}}">
                </div>
 
                <div class="form-group">
                   <label>Description:</label>
-	      <textarea name="description" placeholder="description" class="form-control">{{ request.form['description'] or departments.description }}</textarea>
+	      <textarea name="description" placeholder="description" class="form-control">{{ request.form['description'] or departments[0].description }}</textarea>
                </div>
 
                <div class="form-group">

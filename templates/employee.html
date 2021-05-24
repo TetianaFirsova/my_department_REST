@@ -41,7 +41,7 @@
 </table>
 
     
-<form action="{{ url_for('employee.emp_delete', id_emp=employee_data.id_emp) }}" method="POST">
+<form action="{{ url_for('employee.emp_delete', emp_id=employee_data.id_emp) }}" method="POST">
     <input type="submit" value="Delete"
             class="btn btn-info float-right"
             onclick="return confirm('Are you sure you want to delete this employee?')">

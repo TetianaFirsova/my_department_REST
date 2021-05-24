@@ -38,12 +38,29 @@ def dep_create():
 
     return redirect(url_for('department.dep_index'))
 
-#-------------------------------------------------------
+
 @department.route('/department/<int:dep_id>/update', methods=['GET', 'POST'])
 def dep_update(dep_id):
-    pass
+    if request.method == 'POST':
+        dep_name = request.form['dep_name']
+        description = request.form['description']
+
+        headers = {'Content-type': 'application/json'}
+        response = requests.put(service_url, json={"id_dep": dep_id, "dep_name": dep_name, "description": description}, headers=headers)
+
+        if response.status_code in range(200,299):
+            flash("Department was successfully updated")
+
+    return redirect(url_for('department.dep', dep_id=dep_id))
 
 
-@department.route('/department/<int:id_dep>/delete', methods=['GET', 'POST'])
-def dep_delete(id_dep):
-    pass
+@department.route('/department/<int:dep_id>/delete', methods=['GET', 'POST'])
+def dep_delete(dep_id):
+    if request.method == 'POST':
+        headers = {'Content-type': 'application/json'}
+        response = requests.delete(service_url, json={"id_dep": dep_id}, headers=headers)
+
+        if response.status_code in range(200,299):
+            flash("Department was successfully deleted")
+
+    return redirect(url_for('department.dep_index'))
