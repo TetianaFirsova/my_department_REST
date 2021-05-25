@@ -6,12 +6,12 @@ from werkzeug.exceptions import abort
 department = Blueprint("department", __name__)
 service_url='http://127.0.0.1:5002/api/departments'
 
+
 @department.route('/department')
 def dep_index():
     response = requests.get(service_url)
     dep_data = response.json()
-    return render_template("departments.html",departments=dep_data['data'])
-
+    return render_template("departments.html",departments=[dep_data['data'],dep_data['avg_sal']])
 
 
 @department.route('/department/<int:dep_id>')

@@ -9,16 +9,12 @@
 
 <h1>{% block title %} University departments: {% endblock %}<button type="button"  class="btn btn-success float-right" 
 		data-toggle="modal" data-target="#mymodal">New department</button></h1>
-    {% for dep in departments %}
+    {% for dep in departments[0] %}
         <a href="{{ url_for('department.dep', dep_id=dep.id_dep) }}">
             <h2>{{ dep.dep_name }}</h2>
         </a>
-        <span class="badge badge-primary">staff: 
-			{% if dep.employees %}
-                {{ dep.employees.count() }}
-            {% else %}
-                0
-            {% endif %}
+        average salary: <span class="badge badge-primary">
+                {{ departments[1][loop.index0] }}
         </span>
         <hr>
     {% endfor %}
