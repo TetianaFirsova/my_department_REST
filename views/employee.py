@@ -1,9 +1,10 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 import requests
 from werkzeug.exceptions import abort
+from config import serv_url
 
 employee = Blueprint("employee", __name__)
-service_url='http://127.0.0.1:5002/api/employees'
+service_url=serv_url+'/api/employees'      #'http://depemp-service.herokuapp.com/api/employees'
 
 
 @employee.route('/employee')
@@ -18,7 +19,7 @@ def emp(emp_id):
     response = requests.get(service_url+'/'+str(emp_id))
     emp_data = response.json()
     if emp_data['status']=='failed': 
-        return render_template('employee.html', {"message": "no matching employee"}) #abort(404)
+        return abort(404)
 
     return render_template('employee.html', employee_data=emp_data['data'])
 
@@ -47,10 +48,15 @@ def search_by_date():
     if request.method == 'POST':
         b_date = request.form['search_date']
 
+        if not b_date: 
+            flash("Birth date for search is empty")
+            return redirect(url_for('employee.emp_index'))
+
         response = requests.get(service_url+'/search/'+str(b_date))
         emp_data = response.json()
         if emp_data['status']=='failed': 
-            abort(404)
+            flash(emp_data['message'])
+            return redirect(url_for('employee.emp_index'))  #abort(404)
 
     return render_template('search_result.html', employees_data=emp_data['data'])
 
@@ -64,7 +70,8 @@ def search_between_dates():
         response = requests.get(service_url+'/search_between/'+str(start_b_date)+','+str(end_b_date))
         emp_data = response.json()
         if emp_data['status']=='failed': 
-            abort(404)
+            flash(emp_data['message'])
+            return redirect(url_for('employee.emp_index'))  #abort(404)
 
     return render_template('search_result.html', employees_data=emp_data['data'])
 

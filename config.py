@@ -24,10 +24,12 @@ class TestingConfig(Config):
     Testing configurations
     """
     TESTING = True
-    
+    DEBUG = False
 
 app_config = {
     'development': DevelopmentConfig,
     'production': ProductionConfig,
     'testing': TestingConfig
 }
+
+serv_url='http://depemp-service.herokuapp.com'

@@ -1,10 +1,11 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 import requests
 from werkzeug.exceptions import abort
+from config import serv_url
 
 
 department = Blueprint("department", __name__)
-service_url='http://127.0.0.1:5002/api/departments'
+service_url=serv_url+'/api/departments'
 
 
 @department.route('/department')
