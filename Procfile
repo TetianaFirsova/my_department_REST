@@ -1,1 +1,1 @@
-web: gunicorn my_department_REST.app:app --log-file=-
+web: gunicorn app:app --log-file=-
