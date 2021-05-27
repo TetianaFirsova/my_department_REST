@@ -6,8 +6,16 @@ install:
   - pip install -r requirements.txt
   - pip install coveralls
 script: 
-  - export FLASK_CONFIG=testing
-  - coverage run tests.py
+  - export FLASK_CONFIG=production #testing
+  # - coverage run tests.py
 after_success:
   - coverage report --omit '/home/travis/virtualenv/python3.8.7/lib/python3.8/site-packages/*'
   - coveralls
+deploy:
+  provider: heroku
+  app: "imaginary-university"
+  api_key: "c36fd3f5-8d95-44bc-b1a9-9ee50d1b2e5d"
+  skip_cleanup: true
+  on:
+    repo: TetianaFirsova/my_department_REST
+    branch: main
