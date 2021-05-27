@@ -67,6 +67,10 @@ def search_between_dates():
         start_b_date = request.form['start_search_date']
         end_b_date = request.form['end_search_date']
 
+        if not start_b_date or not end_b_date: 
+            flash("Birth date for search is empty")
+            return redirect(url_for('employee.emp_index'))
+
         response = requests.get(service_url+'/search_between/'+str(start_b_date)+','+str(end_b_date))
         emp_data = response.json()
         if emp_data['status']=='failed': 
