@@ -27,6 +27,7 @@ _**Main scenario:**_
 
 ![ScreenShot](/documentation/mockups/home_page.png)
 
+
 ## 2. Departments
 
 ### 2.1. Display a list of all departments
@@ -56,7 +57,7 @@ _**Create new department:**_
 
 ![ScreenShot](/documentation/mockups/add_department.png)
 
-**2.2 Display selected department**
+### 2.2 Display selected department
 
 This page is intended for viewing information about chosen department and editing/deleting this department
 
@@ -93,9 +94,10 @@ _**View selected employee:**_
 - User presses selected employee reference in the department;
 - Application will show the page with information about chosen employee.
 
-**3. Employees**
 
-**3.1. Display a list of all employees**
+## 3. Employees
+
+### 3.1. Display a list of all employees
 
 This page is intended for viewing list of all employees, creating the new one, searching for employees born on a certain date or in the period between dates
 
@@ -134,7 +136,7 @@ _**Search for employees by period between dates:**_
 - User sets a start and end dates in bottom search fields and presses &quot;Search&quot; button;
 - Application will show the page with all employees was born in the entered period.
 
-**3.2 Display selected employee**
+### 3.2 Display selected employee
 
 This page is intended for viewing information about chosen employee and editing/deleting this employee
 
