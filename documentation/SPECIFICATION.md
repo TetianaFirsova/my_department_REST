@@ -2,7 +2,7 @@
 
 ## Description
 
-&quot;my\_department\_REST&quot; is a simple web application for managing departments and employees. This web application uses web service &quot;service&quot; for storing data and reading from database. The Web application is deployed on Heroku with name &quot;imaginary-university&quot; and available at https://imaginary-university.herokuapp.com/ The Web service is also deployed on Heroku with name &quot;depemp-service&quot; and available at https://imaginary-university.herokuapp.com/ For local running the web app and web service one should use addresses [https://127.0.0.1:5000](https://127.0.0.1:5000/) and [https://127.0.0.1:5002](https://127.0.0.1:5002/) respectively.
+&quot;my\_department\_REST&quot; is a simple web application for managing departments and employees. This web application uses web service &quot;service&quot; for storing data and reading from database. The Web application is deployed on Heroku with name &quot;imaginary-university&quot; and available at https://imaginary-university.herokuapp.com/ The Web service is also deployed on Heroku with name &quot;depemp-service&quot; and available at https://depemp-service.herokuapp.com/ For local running the web app and web service one should use addresses [https://127.0.0.1:5000](https://127.0.0.1:5000/) and [https://127.0.0.1:5002](https://127.0.0.1:5002/) respectively.
 
 The web application should allow:
 
