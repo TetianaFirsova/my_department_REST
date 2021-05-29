@@ -25,9 +25,7 @@ _**Main scenario:**_
 - User selects menu tab &quot;Home&quot;;
 - Application displays greeting page.
 
-    <p align="center">
-    <img src="/documentation/mockups/home_page.png">
-    </p>
+![ScreenShot](/documentation/mockups/home_page.png)
 
 **2. Departments**
 
@@ -40,9 +38,7 @@ _**Main scenario:**_
 - User selects menu tab &quot;Departments&quot;;
 - Application displays list of departments and automatically calculated average salary for these departments
 
-    <p align="center">
-    <img src="/documentation/mockups/departments_list.png">
-    </p>
+![ScreenShot](/documentation/mockups/departments_list.png)
 
 _**View selected department:**_
 
@@ -58,18 +54,14 @@ _**Create new department:**_
 - Created department appears in list of all departments;
 - In step3 if user presses &quot;Close&quot; button, then any department is created.
 
-    <p align="center">
-    <img src="/documentation/mockups/add_department.png">
-    </p>
+![ScreenShot](/documentation/mockups/add_department.png)
 
 **2.2 Display selected department**
 
 This page is intended for viewing information about chosen department and editing/deleting this department
 
-    <p align="center">
-    <img src="/documentation/mockups/department_page.png">
-    </p>
-Pict. 1
+![ScreenShot](/documentation/mockups/department_page.png)
+pict. 1
 
 _**Edit department:**_
 
@@ -80,9 +72,7 @@ _**Edit department:**_
 - Information about department is updated in department page;
 - In step3 if user presses &quot;Close&quot; button, then any department was not updated. 
 
-    <p align="center">
-    <img src="/documentation/mockups/update_department.png">
-    </p>
+![ScreenShot](/documentation/mockups/update_department.png)
 
 _**Delete department:**_
 
@@ -114,9 +104,7 @@ _**Main scenario:**_
 - User selects menu tab &quot;Employees&quot;;
 - Application displays list of employees.
 
-    <p align="center">
-    <img src="/documentation/mockups/employees_list.png">
-    </p>
+![ScreenShot](/documentation/mockups/employees_list.png)
 
 _**View selected employee:**_
 
@@ -132,18 +120,14 @@ _**Create new employee:**_
 - Created employee appears in list of all employees;
 - In step3 if user presses &quot;Close&quot; button, then any employee is created.
 
-    <p align="center">
-    <img src="/documentation/mockups/add_employee.png">
-    </p>
+![ScreenShot](/documentation/mockups/add_employee.png)
 
 _**Search for employees by date:**_
 
 - User sets a date of employee birth in top search field and presses &quot;Search&quot; button;
 - Application will show the page with all employees was born on this date.
 
-    <p align="center">
-    <img src="/documentation/mockups/search_results.png">
-    </p>
+![ScreenShot](/documentation/mockups/search_results.png)
 
 _**Search for employees by period between dates:**_
 
@@ -154,10 +138,7 @@ _**Search for employees by period between dates:**_
 
 This page is intended for viewing information about chosen employee and editing/deleting this employee
 
-    <p align="center">
 ![ScreenShot](/documentation/mockups/employee_page.png)
-    </p>
-
 pict. 2.
 
 _**Edit employee:**_
@@ -169,9 +150,7 @@ _**Edit employee:**_
 - Information about employee is updated in employee page;
 - In step3 if user presses &quot;Close&quot; button, then any employee was not updated.
 
-    <p align="center">
-    <img src="/documentation/mockups/update_employee.png">
-    </p>
+![ScreenShot](/documentation/mockups/update_employee.png)
 
 _**Delete employee:**_
 
