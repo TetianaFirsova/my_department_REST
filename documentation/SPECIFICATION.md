@@ -20,7 +20,7 @@ The web application should allow:
 
 Display greeting title and greeting image.
 
-_ **Main scenario:** _
+_**Main scenario:**_
 
 - User selects menu tab &quot;Home&quot;;
 - Application displays greeting page.
@@ -69,6 +69,7 @@ This page is intended for viewing information about chosen department and editin
     <p align="center">
     <img src="/documentation/mockups/department.png">
     </p>
+
 Pict. 1
 
 _ **Edit department:** _
@@ -157,6 +158,7 @@ This page is intended for viewing information about chosen employee and editing/
     <p align="center">
     <img src="/documentation/mockups/employee.png">
     </p>
+
 Pict. 2.
 
 _ **Edit employee:** _
