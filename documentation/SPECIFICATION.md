@@ -16,7 +16,7 @@ The web application should allow:
 
 - change (add / edit / delete) the above data
 
-**1. Home**
+###1. Home
 
 Display greeting title and greeting image.
 
@@ -152,12 +152,13 @@ _**Search for employees by period between dates:**_
 
 **3.2 Display selected employee**
 
-This page is intended for viewing information about chosen employee and editing/deleting this employee
+This page is intended for viewing information about chosen employee and editing/deleting this employee.
 
     <p align="center">
     <img src="/documentation/mockups/employee_page.png">
     </p>
-Pict. 2.
+
+pict. 2.
 
 _**Edit employee:**_
 
