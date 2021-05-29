@@ -1,6 +1,6 @@
-Imaginary University
+# Imaginary University
 
-DESCRIPTION
+## Description
 
 &quot;my\_department\_REST&quot; is a simple web application for managing departments and employees. This web application uses web service &quot;service&quot; for storing data and reading from database. The Web application is deployed on Heroku with name &quot;imaginary-university&quot; and available at https://imaginary-university.herokuapp.com/ The Web service is also deployed on Heroku with name &quot;depemp-service&quot; and available at https://imaginary-university.herokuapp.com/ For local running the web app and web service one should use addresses [https://127.0.0.1:5000](https://127.0.0.1:5000/) and [https://127.0.0.1:5002](https://127.0.0.1:5002/) respectively.
 
@@ -16,7 +16,7 @@ The web application should allow:
 
 - change (add / edit / delete) the above data
 
-**1. Home**
+## 1. Home
 
 Display greeting title and greeting image.
 
@@ -27,9 +27,9 @@ _**Main scenario:**_
 
 ![ScreenShot](/documentation/mockups/home_page.png)
 
-**2. Departments**
+## 2. Departments
 
-**2.1. Display a list of all departments**
+### 2.1. Display a list of all departments
 
 This page is intended for viewing list of all departments and creating the new one.
 
