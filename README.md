@@ -41,7 +41,7 @@ This will download and install all the extensions in [requirements.txt](/require
   - set FLASK_APP=run (for Windows)
 
 or
-  - export FLASK_CONFIG=development (for Linux)
+  - export FLASK_CONFIG=development
   - export FLASK_APP=run (for Linux)
 
 #### 5. Run the project:
@@ -50,12 +50,4 @@ or
 After running the app you could visit http://127.0.0.1:5000 to see the web app in action.
 
 **Note!**
-To work correctly, the web app 'my_department_REST' need running web service 'service'. The web service was launched on heroku. If for some reason it stops working there, you should run it locally and change the corresponding variable in [config.py](/config.py) of web app from
-
-serv_url='http://depemp-service.herokuapp.com'
-
-to
-
-serv_url='http://127.0.0.1:5002'
-
-(see specification for web service)
+To work correctly, the web app 'my_department_REST' need running web service 'service'. The web service was launched on heroku. If for some reason it stops working there, you should run it locally and change the corresponding variable in [config.py](/config.py) of web app from serv_url='http://depemp-service.herokuapp.com' to serv_url='http://127.0.0.1:5002' (see specification for web service)
